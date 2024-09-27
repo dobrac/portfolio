@@ -1,7 +1,6 @@
 import type {MDXComponents} from 'mdx/types'
 import Image, {ImageProps} from 'next/image'
 import {TypographyH1} from "./components/ui/typography/typography-h1";
-import {TypographyLead} from "./components/ui/typography/typography-lead";
 import {TypographyP} from "./components/ui/typography/typography-p";
 import {TypographyH2} from "./components/ui/typography/typography-h2";
 
