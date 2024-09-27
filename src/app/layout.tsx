@@ -27,15 +27,15 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Jakub Dobry | Portfolio',
+    template: '%s | Jakub Dobry',
   },
-  description: 'This is my portfolio.',
+  description: 'Jakub Dobry\'s portfolio.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Jakub Dobry | Portfolio',
+    description: 'Jakub Dobry\'s portfolio.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Jakub Dobry',
     locale: 'en_US',
     type: 'website',
   },
