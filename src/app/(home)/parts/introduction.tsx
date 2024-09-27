@@ -51,9 +51,11 @@ export function IntroductionPart() {
         </div>
 
         <Image
-          {...profilePicture}
+          src="/images/profile_picture.jpeg"
           alt="Jakub Dobry selfie"
           className="rounded-full w-32 h-32"
+          width="200"
+          height="200"
           sizes="100vw"
           style={{width: '200px', height: 'auto'}}
         />

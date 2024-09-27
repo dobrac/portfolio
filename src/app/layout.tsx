@@ -39,6 +39,14 @@ export const metadata: Metadata = {
     siteName: 'Jakub Dobry',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: `${baseUrl}/images/profile_picture.jpeg`,
+        width: 1000,
+        height: 1000,
+        alt: 'Jakub Dobry Selfie',
+      },
+    ],
   },
   robots: {
     index: true,

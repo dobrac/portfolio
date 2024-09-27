@@ -15,7 +15,11 @@ export default function Home() {
         <EducationPart/>
       </main>
       <footer className="flex flex-col items-center justify-center my-4 gap-2">
-        <TypographySmall>Built with Next.js and Tailwind CSS.</TypographySmall>
+        <TypographySmall>
+          Built with Next.js and Tailwind CSS.{' '}
+          <a href="https://github.com/dobrac/portfolio">Source code</a>
+          .
+        </TypographySmall>
         <TypographySmall>
           Jakub Dobry &copy; {new Date().getFullYear()}
         </TypographySmall>

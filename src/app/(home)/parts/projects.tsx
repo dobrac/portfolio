@@ -23,7 +23,6 @@ function ProjectCard({title, imageUrl, description, technologies, link}: Readonl
             <Image
               src={imageUrl}
               alt={title + " preview"}
-              objectFit="cover"
               fill={true}
               sizes="100vw"
               className="rounded object-top"
