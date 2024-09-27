@@ -2,7 +2,6 @@ import {TypographyH1} from "../../../components/ui/typography/typography-h1";
 import {TypographyLead} from "../../../components/ui/typography/typography-lead";
 import {TypographySmall} from "../../../components/ui/typography/typography-small";
 import Image from "next/image";
-import profilePicture from "../../images/profile_picture.jpeg";
 import Introduction from "../../markdown/introduction.mdx";
 import {Section} from "./section";
 
