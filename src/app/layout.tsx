@@ -72,7 +72,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)] mx-auto max-w-screen-md px-4`}
     >
     <nav
-      className="my-5 flex md:justify-center">
+      className="my-3 flex md:justify-center sticky top-0 bg-background py-1 z-40">
       <MobileNav/>
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList>
