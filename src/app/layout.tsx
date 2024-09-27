@@ -13,6 +13,7 @@ import Link from "next/link";
 import {MobileNav} from "../components/ui/mobile-nav";
 import {navbar} from "../config/nav";
 import {SpeedInsights} from "@vercel/speed-insights/next"
+import {Toaster} from "../components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -89,6 +90,7 @@ export default function RootLayout({
       </NavigationMenu>
     </nav>
     {children}
+    <Toaster/>
     <SpeedInsights/>
     </body>
     </html>

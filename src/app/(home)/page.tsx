@@ -4,6 +4,7 @@ import {EducationPart} from "./parts/education";
 import {ProjectsPart} from "./parts/projects";
 import {TypographySmall} from "../../components/ui/typography/typography-small";
 import {AwardsPart} from "./parts/awards";
+import ContactForm from "./parts/contact-form";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <ProjectsPart/>
         <AwardsPart/>
         <EducationPart/>
+        <ContactForm/>
       </main>
       <footer className="flex flex-col items-center justify-center my-4 gap-2">
         <TypographySmall>
