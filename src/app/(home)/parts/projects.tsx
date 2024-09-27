@@ -3,29 +3,31 @@ import {Section} from "./section";
 import {Badge} from "../../../components/ui/badge";
 import Image from "next/image";
 import {Skeleton} from "@/components/ui/skeleton";
+import {cn} from "../../../lib/utils";
 
-function ProjectCard({title, imageUrl, description, technologies, link}: Readonly<{
+function ProjectCard({title, imageUrl, imageFull, description, technologies, link}: Readonly<{
   title: string,
   imageUrl?: string,
+  imageFull?: boolean,
   description: string,
   technologies: string[],
-  link: string
+  link?: string
 }>) {
   return (
-    <div className="flex flex-col gap-3 break-inside-avoid-column py-4">
+    <div className="flex flex-col gap-3 break-inside-avoid-column py-6">
       <a
         href={link}
         target="_blank"
         className="text-xl font-semibold grid gap-2"
       >
-        <div className="h-40 w-full relative">
+        <div className="h-52 w-full relative border drop-shadow">
           {imageUrl ?
             <Image
               src={imageUrl}
               alt={title + " preview"}
               fill={true}
               sizes="100vw"
-              className="rounded object-top"
+              className={cn("rounded object-top", imageFull ? "object-contain" : "object-cover")}
             />
             : <Skeleton className="w-full h-full"/>
           }
@@ -47,12 +49,12 @@ export function ProjectsPart() {
     <Section id="projects">
       <TypographyH2>Projects</TypographyH2>
 
-      <div className="mt-5 gap-4 columns-2">
+      <div className="mt-5 gap-x-16 columns-1 md:columns-2">
         <ProjectCard
           title="QPlay.cz"
           imageUrl="/images/projects/qplay-cz.png"
           description="Frontpage of the Minecraft server."
-          technologies={["Next.js"]}
+          technologies={["Next.js", "SCSS"]}
           link="https://qplay.cz"
         />
         <ProjectCard
@@ -63,10 +65,52 @@ export function ProjectsPart() {
           link="https://info.qplay.cz"
         />
         <ProjectCard
-          title="Personal Website"
-          description="My personal website, built with Next.js and Tailwind CSS."
-          technologies={["Next.js", "Tailwind CSS"]}
-          link="https://dobrac.dev"
+          title="Host QPlay.cz"
+          imageUrl="/images/projects/qplay-host.png"
+          description="Management portal for individual Minecraft server instances. Website contains server info, management, and logs.
+           The backend is made of automatic server deployment, load balancing and planning."
+          technologies={["Next.js", "Typescript", "Redis", "Java", "PostgreSQL"]}
+        />
+        <ProjectCard
+          title="RS 500 International"
+          imageUrl="/images/projects/rs500-international.png"
+          description="Presentation website for the RS 500 International Sailing Class Association."
+          technologies={["Next.js", "Typescript", "WordPress"]}
+        />
+        <ProjectCard
+          title="ESTIMAS Frontpage"
+          imageUrl="/images/projects/estimas-cz.png"
+          description="Frontpage of the time tracking software ESTIMAS."
+          technologies={["Next.js"]}
+          link="https://estimas.cz"
+        />
+        <ProjectCard
+          title="ESTIMAS Software"
+          imageUrl="/images/projects/estimas.png"
+          description="Time tracking software ESTIMAS. Includes time tracking, time planning, absences, user management, projects, tasks."
+          technologies={["Vue.js", "Nuxt.js", "Javascript"]}
+          link="https://estimas.cz"
+        />
+        <ProjectCard
+          title="Kubernetes Cluster"
+          imageUrl="/images/projects/kubernetes.svg"
+          imageFull
+          description="Running production Kubernetes cluster with multiple services and heavy traffic. Supporting not only QPlay.cz, ESTIMAS, but also other projects, including build pipelines."
+          technologies={["RKE2", "Microk8s", "Helm"]}
+        />
+        <ProjectCard
+          title="Bare Metal Servers Management"
+          imageUrl="/images/projects/baremetal.png"
+          imageFull
+          description="Management of 10 concurrent bare metal servers. Includes management, monitoring, security."
+          technologies={["VMWare", "Grafana", "Elastic", "Prometheus", "Proxmox", "Bash"]}
+        />
+        <ProjectCard
+          title="Minecraft Plugins"
+          imageUrl="/images/projects/spigot.png"
+          imageFull
+          description="Developing Minecraft Plugins mainly for the server QPlay.cz. Including minigames, server management, players routing betwee nservers, friend and party system, login, and more."
+          technologies={["Java", "Maven", "Spigot", "Kotlin", "Gradle", "Redis", "PostgreSQL"]}
         />
       </div>
     </Section>
