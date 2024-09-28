@@ -10,6 +10,7 @@ import {Button} from "./button"
 import {ScrollArea} from "./scroll-area"
 import {navbar} from "../../config/nav";
 import {DialogDescription, DialogTitle} from "@radix-ui/react-dialog";
+import {ModeToggle} from "../mode-toggle";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
@@ -77,6 +78,7 @@ export function MobileNav() {
                   </MobileLink>
                 )
             )}
+            <ModeToggle/>
           </div>
         </ScrollArea>
       </SheetContent>
