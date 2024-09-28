@@ -75,7 +75,7 @@ export function ProjectsPart() {
           title="Minecraft Plugins"
           imageUrl="/images/projects/spigot.png"
           imageFull
-          description="Developing Minecraft Plugins mainly for the server QPlay.cz. Including minigames, server management, players routing betwee nservers, friend and party system, login, and more."
+          description="Developing Minecraft plugins mainly for the server QPlay.cz. Including minigames, server management, players routing betwee nservers, friend and party system, login, and more."
           technologies={["Java", "Maven", "Spigot", "Kotlin", "Gradle", "Redis", "PostgreSQL"]}
         />
         <ProjectCard

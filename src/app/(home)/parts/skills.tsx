@@ -40,8 +40,8 @@ export function SkillsPart() {
           <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mt-3">
             <Skill name="Typescript" description="Frontend and backend of websites"/>
             <Skill name="Javascript" description="Frontend and backend of websites"/>
-            <Skill name="Kotlin" description="Frontend, backend, infrastructure, Minecraft Plugins"/>
-            <Skill name="Java" description="Backend, infrastructure, Minecraft Plugins"/>
+            <Skill name="Kotlin" description="Frontend, backend, infrastructure, Minecraft plugins"/>
+            <Skill name="Java" description="Backend, infrastructure, Minecraft plugins"/>
             <Skill name="HTML" description="Websites"/>
             <Skill name="CSS, SCSS" description="Websites"/>
             <Skill name="C/C++" description="Many projects at school"/>
