@@ -1,7 +1,6 @@
 import {TypographyH2} from "../../../components/ui/typography/typography-h2";
 import {Section} from "./section";
 import {Badge} from "../../../components/ui/badge";
-import {TypographyLead} from "../../../components/ui/typography/typography-lead";
 import {TypographySmall} from "../../../components/ui/typography/typography-small";
 import {TypographyH3} from "../../../components/ui/typography/typography-h3";
 
@@ -80,6 +79,19 @@ export function SkillsPart() {
             <Skill name="AWS, GCP" description="Architecture, management, monitoring"/>
             <Skill name="Elastic, Grafana" description="Monitoring, deployment, search"/>
             <Skill name="Firebase" description="Firestore, auth, storage, cloud functions"/>
+            <Skill name="Distributed Systems" description="Minecraft server QPlay.cz"/>
+            <Skill name="High Availability" description="Minecraft server QPlay.cz"/>
+            <Skill name="Reliability" description="Minecraft server QPlay.cz"/>
+          </div>
+        </div>
+
+        <div>
+          <TypographyH3>Soft</TypographyH3>
+          <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mt-3">
+            <Skill name="Team Management" description="QPlay.cz organization"/>
+            <Skill name="Planning" description="QPlay.cz organization"/>
+            <Skill name="Written Communication" description="QPlay.cz organization"/>
+            <Skill name="Conflict Resolution" description="QPlay.cz organization"/>
           </div>
         </div>
       </div>
