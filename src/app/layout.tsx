@@ -70,26 +70,28 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)] mx-auto max-w-screen-md px-4`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)]`}
     >
-    <nav
-      className="my-3 flex md:justify-center sticky top-0 bg-background py-1 z-40">
-      <MobileNav/>
-      <NavigationMenu className="hidden md:block">
-        <NavigationMenuList>
-          {navbar.map((item) => (
-            <NavigationMenuItem key={item.href}>
-              <Link href={item.href} legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  {item.title}
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
-    </nav>
-    {children}
+    <div className="mx-auto max-w-screen-md px-4">
+      <nav
+        className="my-3 flex md:justify-center sticky top-0 bg-background py-1 z-40">
+        <MobileNav/>
+        <NavigationMenu className="hidden md:block">
+          <NavigationMenuList>
+            {navbar.map((item) => (
+              <NavigationMenuItem key={item.href}>
+                <Link href={item.href} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {item.title}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </nav>
+      {children}
+    </div>
     <Toaster/>
     <SpeedInsights/>
     </body>

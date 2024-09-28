@@ -72,6 +72,34 @@ export function ProjectsPart() {
           technologies={["Next.js", "Typescript", "Redis", "Java", "PostgreSQL"]}
         />
         <ProjectCard
+          title="Minecraft Plugins"
+          imageUrl="/images/projects/spigot.png"
+          imageFull
+          description="Developing Minecraft Plugins mainly for the server QPlay.cz. Including minigames, server management, players routing betwee nservers, friend and party system, login, and more."
+          technologies={["Java", "Maven", "Spigot", "Kotlin", "Gradle", "Redis", "PostgreSQL"]}
+        />
+        <ProjectCard
+          title="Kubernetes Cluster"
+          imageUrl="/images/projects/kubernetes.svg"
+          imageFull
+          description="Running production Kubernetes cluster with multiple services and heavy traffic. Supporting not only QPlay.cz, ESTIMAS, but also other projects, including build pipelines."
+          technologies={["RKE2", "Microk8s", "Helm", "Docker"]}
+        />
+        <ProjectCard
+          title="Bare Metal Servers Management"
+          imageUrl="/images/projects/baremetal.png"
+          imageFull
+          description="Management of 10 concurrent bare metal servers. Includes management, monitoring, security."
+          technologies={["VMWare", "Grafana", "Elastic", "Prometheus", "Proxmox", "Bash"]}
+        />
+        <ProjectCard
+          title="gRPCFlair"
+          imageUrl="/images/projects/grpcflair.png"
+          description="Tool to help you understand and interact with gRPC(-Web) services. You can use it to explore the service's endpoints and make requests to them, browse types and enums, and preview options."
+          technologies={["Next.js", "Typescript", "gRPC", "gRPC-Web", "Protobuf", "Node.js", "Jest"]}
+          link="https://github.com/dobrac/grpcflair"
+        />
+        <ProjectCard
           title="RS 500 International"
           imageUrl="/images/projects/rs500-international.png"
           description="Presentation website for the RS 500 International Sailing Class Association."
@@ -90,27 +118,6 @@ export function ProjectsPart() {
           description="Time tracking software ESTIMAS. Includes time tracking, time planning, absences, user management, projects, tasks."
           technologies={["Vue.js", "Nuxt.js", "Javascript"]}
           link="https://estimas.cz"
-        />
-        <ProjectCard
-          title="Kubernetes Cluster"
-          imageUrl="/images/projects/kubernetes.svg"
-          imageFull
-          description="Running production Kubernetes cluster with multiple services and heavy traffic. Supporting not only QPlay.cz, ESTIMAS, but also other projects, including build pipelines."
-          technologies={["RKE2", "Microk8s", "Helm"]}
-        />
-        <ProjectCard
-          title="Bare Metal Servers Management"
-          imageUrl="/images/projects/baremetal.png"
-          imageFull
-          description="Management of 10 concurrent bare metal servers. Includes management, monitoring, security."
-          technologies={["VMWare", "Grafana", "Elastic", "Prometheus", "Proxmox", "Bash"]}
-        />
-        <ProjectCard
-          title="Minecraft Plugins"
-          imageUrl="/images/projects/spigot.png"
-          imageFull
-          description="Developing Minecraft Plugins mainly for the server QPlay.cz. Including minigames, server management, players routing betwee nservers, friend and party system, login, and more."
-          technologies={["Java", "Maven", "Spigot", "Kotlin", "Gradle", "Redis", "PostgreSQL"]}
         />
       </div>
     </Section>
