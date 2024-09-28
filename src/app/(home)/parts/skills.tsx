@@ -82,6 +82,8 @@ export function SkillsPart() {
             <Skill name="Distributed Systems" description="Minecraft server QPlay.cz"/>
             <Skill name="High Availability" description="Minecraft server QPlay.cz"/>
             <Skill name="Reliability" description="Minecraft server QPlay.cz"/>
+            <Skill name="Optimization" description="Minecraft server QPlay.cz"/>
+            <Skill name="Advanced Algoritmization" description="School projects"/>
           </div>
         </div>
 
