@@ -57,6 +57,7 @@ export function IntroductionPart() {
           height="200"
           sizes="100vw"
           style={{width: '200px', height: 'auto'}}
+          priority
         />
       </div>
       <Introduction/>

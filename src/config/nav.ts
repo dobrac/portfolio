@@ -10,6 +10,10 @@ export const navbar: SidebarNavItem[] = [
     href: '/',
   },
   {
+    title: 'Skills',
+    href: '/#skills',
+  },
+  {
     title: 'Projects',
     href: '/#projects',
   },

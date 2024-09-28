@@ -5,6 +5,7 @@ import {ProjectsPart} from "./parts/projects";
 import {TypographySmall} from "../../components/ui/typography/typography-small";
 import {AwardsPart} from "./parts/awards";
 import ContactForm from "./parts/contact-form";
+import {SkillsPart} from "./parts/skills";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       className="grid min-h-screen">
       <main className="flex flex-col items-start">
         <IntroductionPart/>
+        <SkillsPart/>
         <ProjectsPart/>
         <ExperiencePart/>
         <AwardsPart/>

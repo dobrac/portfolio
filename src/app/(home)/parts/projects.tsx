@@ -14,7 +14,7 @@ function ProjectCard({title, imageUrl, imageFull, description, technologies, lin
   link?: string
 }>) {
   return (
-    <div className="flex flex-col gap-3 break-inside-avoid-column py-6">
+    <div className="flex flex-col gap-3 break-inside-avoid-column">
       <a
         href={link}
         target="_blank"
@@ -34,7 +34,7 @@ function ProjectCard({title, imageUrl, imageFull, description, technologies, lin
         </div>
         {title}
       </a>
-      <p>{description}</p>
+      <p className="text-pretty text-justify break-words hyphens-auto">{description}</p>
       <div className="flex gap-3 flex-wrap">
         {technologies.map((technology, index) => (
           <Badge key={index} variant="outline">{technology}</Badge>
@@ -49,7 +49,7 @@ export function ProjectsPart() {
     <Section id="projects">
       <TypographyH2>Projects</TypographyH2>
 
-      <div className="mt-5 gap-x-16 columns-1 md:columns-2">
+      <div className="mt-5 grid gap-x-16 gap-y-12 grid-cols-1 md:grid-cols-2">
         <ProjectCard
           title="QPlay.cz"
           imageUrl="/images/projects/qplay-cz.png"
