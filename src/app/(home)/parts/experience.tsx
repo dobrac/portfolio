@@ -63,9 +63,9 @@ export function ExperiencePart() {
           location="Fully Remote"
           points={[
             "Led a team of 50 people and was the lead developer of 5 people.",
-            "Designed and implemented distributed dynamic servers load balancing, internal ticket system, user customer portal, automatic deployment of changes with custom solutions, monitoring, managed own Kubernetes cluster, and more.",
+            "Designed and implemented distributed dynamic servers load balancing, internal ticket system, user customer portal, automatic deployment, performance, scalability, monitoring, managed own Kubernetes cluster, and more.",
             "Used various technologies and languages, but mainly the Java language.",
-            "Dealt with and solved many issues on the technical and personal level during the server's existence."
+            "Successfully handled 2+ mil. users, 10K per day, 2500 concurrently."
           ]}
         />
 
@@ -88,8 +88,8 @@ export function ExperiencePart() {
           dateTo={new Date(2014, 10)}
           location="Fully Remote"
           points={[
-            "Building and managing the server from the beginning. Technical and personal sides.",
-            "Built initially only using existing solutions (plugins).",
+            "Built and managed the server from the beginning. Initially only using existing solutions (plugins).",
+            "Achieved 500 concurrent players. Thousands of users per day.",
             "Later on, this was my first motivation for learning programming, so I learned Java."
           ]}
         /></div>

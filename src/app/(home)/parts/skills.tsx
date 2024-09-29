@@ -79,6 +79,7 @@ export function SkillsPart() {
             <Skill name="AWS, GCP" description="Architecture, management, monitoring"/>
             <Skill name="Elastic, Grafana" description="Monitoring, deployment, search"/>
             <Skill name="Firebase" description="Firestore, auth, storage, cloud functions"/>
+            <Skill name="Figma" description="Designing mainly UX, but also UI for websites"/>
             <Skill name="Distributed Systems" description="Minecraft server QPlay.cz"/>
             <Skill name="High Availability" description="Minecraft server QPlay.cz"/>
             <Skill name="Reliability" description="Minecraft server QPlay.cz"/>
