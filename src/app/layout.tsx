@@ -2,20 +2,9 @@ import type {Metadata} from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import {baseUrl} from "./sitemap";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle
-} from "../components/ui/navigation-menu";
-import Link from "next/link";
-import {MobileNav} from "../components/ui/mobile-nav";
-import {navbar} from "../config/nav";
 import {SpeedInsights} from "@vercel/speed-insights/next"
 import {Toaster} from "../components/ui/sonner";
 import {ThemeProvider} from "../components/theme-provider";
-import {ModeToggle} from "../components/mode-toggle";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -80,27 +69,7 @@ export default function RootLayout({
       enableSystem
       disableTransitionOnChange
     >
-      <div className="mx-auto max-w-screen-md px-4">
-        <nav
-          className="my-3 flex md:justify-center sticky top-0 bg-background py-1 z-40">
-          <MobileNav/>
-          <NavigationMenu className="hidden md:block">
-            <NavigationMenuList>
-              {navbar.map((item) => (
-                <NavigationMenuItem key={item.href}>
-                  <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      {item.title}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              ))}
-              <ModeToggle/>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </nav>
-        {children}
-      </div>
+      {children}
       <Toaster/>
     </ThemeProvider>
     <SpeedInsights/>

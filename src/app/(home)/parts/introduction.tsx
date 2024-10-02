@@ -4,18 +4,19 @@ import {TypographySmall} from "../../../components/ui/typography/typography-smal
 import Image from "next/image";
 import Introduction from "../../markdown/introduction.mdx";
 import {Section} from "./section";
+import {data} from "../../../config/data";
 
 export function IntroductionPart() {
   return (
     <Section>
       <div className="w-full flex gap-10 items-center justify-center flex-col md:flex-row">
         <div>
-          <TypographyH1 className="text-nowrap">Jakub Dobry</TypographyH1>
+          <TypographyH1 className="text-nowrap">{data.introduction.name}</TypographyH1>
           <TypographyLead>
-            Software Engineer
+            {data.introduction.position}
           </TypographyLead>
           <TypographySmall>
-            Prague, Czech Republic, willing to relocate
+            {data.introduction.city}, willing to relocate
           </TypographySmall>
 
           <div className="mt-5 flex gap-5">
@@ -51,7 +52,7 @@ export function IntroductionPart() {
 
         <Image
           src="/images/profile_picture.jpeg"
-          alt="Jakub Dobry selfie"
+          alt={`${data.introduction.name} selfie`}
           className="rounded-full w-32 h-32"
           width="200"
           height="200"

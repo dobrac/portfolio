@@ -1,15 +1,16 @@
 import {TypographyH2} from "../../../components/ui/typography/typography-h2";
 import {Section} from "./section";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
+import {data, Education} from "../../../config/data";
 
-function EducationSection({title, school, dateFrom, dateTo, location, additionalInfo}: Readonly<{
-  title: string,
-  school: string,
-  dateFrom: Date,
-  dateTo?: Date,
-  location: string
-  additionalInfo?: React.ReactNode
-}>) {
+function EducationSection({
+                            name,
+                            title,
+                            dateFrom,
+                            dateTo,
+                            location,
+                            additionalInfo
+                          }: Readonly<Omit<Education, "additionalInfo"> & { additionalInfo?: React.ReactNode }>) {
   const dateFromFormatted = dateFrom.toLocaleDateString('en-US', {month: 'short', year: 'numeric'});
   const dateToFormatted = dateTo?.toLocaleDateString('en-US', {month: 'short', year: 'numeric'}) ?? 'Present';
 
@@ -17,8 +18,8 @@ function EducationSection({title, school, dateFrom, dateTo, location, additional
     <Card>
       <CardHeader>
         <CardTitle>
-          {title}
-          <div className="text-lg font-semibold">{school}</div>
+          {name}
+          <div className="text-lg font-semibold">{title}</div>
         </CardTitle>
         <CardDescription>
           <div className="w-full flex justify-between">
@@ -40,30 +41,17 @@ export function EducationPart() {
       <TypographyH2>Education</TypographyH2>
 
       <div className="flex flex-col gap-5 mt-5">
-        <EducationSection
-          title="Master's degree, Web Engineering"
-          school="Faculty of Information Technology, CTU"
-          dateFrom={new Date(2021, 8)}
-          dateTo={new Date(2024, 6)}
-          location="Prague, Czech Republic"
-          additionalInfo={
-            <div className="flex flex-col gap-3">
-              <p>
-                Grade: GPA ~3.8
-              </p>
-              <p>
-                Graduated, Master thesis title: &#34;Interactive web documentation for Protocol Buffers&#34;
-              </p>
+        {data.educations.map((education, index) => (
+          <EducationSection key={index} {...education} additionalInfo={(
+            <div>
+              {education.additionalInfo?.split('\n').map((line, index) => (
+                <p key={index}>
+                  {line}&nbsp;
+                </p>
+              ))}
             </div>
-          }
-        />
-        <EducationSection
-          title="Study Abroad Program"
-          school="RMIT University"
-          dateFrom={new Date(2023, 1)}
-          dateTo={new Date(2023, 5)}
-          location="Melbourne, Australia"
-        />
+          )}/>
+        ))}
       </div>
     </Section>
   )
