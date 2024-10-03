@@ -1,10 +1,7 @@
 "use client"
 import {data, WithHeader} from "../../config/data";
 import {Button} from "../../components/ui/button";
-// @ts-expect-error html2pdf.js does not support Typescript
-import html2pdf from "html2pdf.js";
 import {cn} from "@/lib/utils";
-import React from "react";
 
 function SectionHeader(header: WithHeader & { skipMargin?: boolean }) {
   const dateFromFormatted = header.dateFrom.toLocaleDateString('en-US', {month: 'short', year: 'numeric'});
@@ -45,6 +42,8 @@ export default function Resume() {
       jsPDF: {unit: 'in', format: 'a4', orientation: 'portrait'}
     };
 
+    // @ts-expect-error html2pdf.js does not support Typescript
+    const html2pdf = await import('html2pdf.js');
     const pdf = await html2pdf()
       .set(opt)
       .from(element)
