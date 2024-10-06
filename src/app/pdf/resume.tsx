@@ -85,7 +85,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
           <Text>
             {email ?? "---"} • {numberFormatted ?? "---"} • {data.introduction.city} •{" "}
             <Link src="https://www.linkedin.com/in/jakub-dobry/"
-                  style={{color: "inherit", textDecoration: "inherit"}}>linkedin.com/in/jakub-dobry</Link>
+                  style={{color: "inherit", textDecoration: "none"}}>linkedin.com/in/jakub-dobry</Link>
           </Text>
         </View>
         <View>
