@@ -1,8 +1,7 @@
-// Register font
 import {Document, Font, Link, Page, StyleSheet, Text, View} from "@react-pdf/renderer";
 import {data, WithHeader} from "../../config/data";
-import * as React from "react";
 
+// Register font
 Font.register({
     family: 'Calibri', fonts: [
       {src: "/fonts/calibri.ttf"}, // font-style: normal, font-weight: normal
