@@ -64,7 +64,7 @@ const experiences: Experience[] = [
     points: [
       "Architecting and implementing core parts of a new product from the ground up.",
       "Taking the lead in designing new features, making key technical decisions, and solving complex technical challenges.",
-      "Demonstrating strong communication skills by collaborating effectively with team members and providing support to ensure task completion.",
+      "Collaborating effectively with team members and providing support to ensure task completion.",
       "Currently leveraging TypeScript with Next.js and Node.js for full stack development; previously developed both frontend and backend using Kotlin.",
     ]
   },

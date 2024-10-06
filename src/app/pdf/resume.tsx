@@ -1,5 +1,5 @@
 // Register font
-import {Document, Font, Page, StyleSheet, Text, View} from "@react-pdf/renderer";
+import {Document, Font, Link, Page, StyleSheet, Text, View} from "@react-pdf/renderer";
 import {data, WithHeader} from "../../config/data";
 import * as React from "react";
 
@@ -59,55 +59,65 @@ function SectionHeaderPdf(header: WithHeader & { skipMargin?: boolean }) {
   )
 }
 
-export const ResumeDocument = () => (
-  <Document title="Jakub Dobry - Resume">
-    <Page size="A4" orientation="portrait" style={styles.page}>
-      <View style={{
-        display: "flex",
-        flexDirection: 'column',
-        alignItems: 'center',
-        alignSelf: 'center',
-        gap: 8,
-        width: '80%'
-      }}>
-        <Text style={{fontWeight: "bold"}}>
-          {data.introduction.name}
-        </Text>
-        <View style={{width: "100%", border: "0.5px solid black"}}/>
-        <Text>
-          email • phone • {data.introduction.city} • linkedin.com/in/jakub-dobry
-        </Text>
-      </View>
-      <View>
-        <Text style={{fontWeight: "bold", textAlign: "center"}}>
-          Experience
-        </Text>
+interface ResumeDocumentProps {
+  email?: string,
+  phone?: string,
+}
+
+export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
+  const numberFormatted = phone?.replace(/\D/g, '')?.replace(/^420(\d{3})(\d{3})(\d{3})$/, '+420 $1 $2 $3');
+
+  return (
+    <Document title="Jakub Dobry - Resume">
+      <Page size="A4" orientation="portrait" style={styles.page}>
         <View style={{
+          display: "flex",
           flexDirection: 'column',
+          alignItems: 'center',
+          alignSelf: 'center',
           gap: 8,
+          width: '85%'
         }}>
-          {data.experiences.map((experience) => (
-            <View key={experience.title}>
-              <SectionHeaderPdf {...experience}/>
-              <View style={{marginLeft: 12}}>
-                {experience.points.map((point) => (
-                  <View key={point} style={{flexDirection: 'row', gap: 2}}>
-                    <Text style={{
-                      fontSize: 14,
-                    }}>
-                      •
-                    </Text>
-                    <Text>
-                      {point}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-            </View>
-          ))}
+          <Text style={{fontWeight: "bold"}}>
+            {data.introduction.name}
+          </Text>
+          <View style={{width: "100%", border: "0.5px solid black"}}/>
+          <Text>
+            {email ?? "---"} • {numberFormatted ?? "---"} • {data.introduction.city} •{" "}
+            <Link src="https://www.linkedin.com/in/jakub-dobry/"
+                  style={{color: "inherit", textDecoration: "inherit"}}>linkedin.com/in/jakub-dobry</Link>
+          </Text>
         </View>
-      </View>
-      {/*<View>
+        <View>
+          <Text style={{fontWeight: "bold", textAlign: "center"}}>
+            Experience
+          </Text>
+          <View style={{
+            flexDirection: 'column',
+            gap: 8,
+          }}>
+            {data.experiences.map((experience) => (
+              <View key={experience.title}>
+                <SectionHeaderPdf {...experience}/>
+                <View style={{marginLeft: 12}}>
+                  {experience.points.map((point) => (
+                    <View key={point} style={{flexDirection: 'row', gap: 2}}>
+                      <Text style={{
+                        fontSize: 14,
+                      }}>
+                        •
+                      </Text>
+                      <Text>
+                        {point}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            ))}
+          </View>
+        </View>
+        {/*<View>
         <Text style={{fontWeight: "bold", textAlign: "center"}}>
           Leadership & Activities
         </Text>
@@ -136,57 +146,58 @@ export const ResumeDocument = () => (
           ))}
         </View>
       </View>*/}
-      <View>
-        <Text style={{fontWeight: "bold", textAlign: "center"}}>
-          Education
-        </Text>
-        <View style={{
-          flexDirection: 'column',
-          gap: 8,
-        }}>
-          {data.educations.map((education, index) => (
-            <View key={index}>
-              <SectionHeaderPdf {...education} skipMargin/>
-              <View>
-                {education.additionalInfo?.split("\n")?.map((point) => (
-                  <Text key={point}>
-                    {point.trim()}
-                  </Text>
-                ))}
-              </View>
-            </View>
-          ))}
-        </View>
-      </View>
-      <View>
-        <Text style={{fontWeight: "bold", textAlign: "center"}}>
-          Skills & Interests
-        </Text>
         <View>
-          {[
-            ...data.skills,
-            {name: "Languages", skills: data.introduction.languages},
-            {
-              name: "Interests",
-              skills: data.introduction.interests
-            }
-          ].map((category) => (
-            <Text key={category.name}>
-              <Text
-                style={{
-                  fontWeight: "bold",
-                }}
-                wrap={false}
-              >
-                {category.name}:&nbsp;
-              </Text>
-              <Text>
-                {category.skills.map(it => `${it.name}${it.level ? ` [${it.level}]` : ""}`).join(", ")}
-              </Text>
-            </Text>
-          ))}
+          <Text style={{fontWeight: "bold", textAlign: "center"}}>
+            Education
+          </Text>
+          <View style={{
+            flexDirection: 'column',
+            gap: 8,
+          }}>
+            {data.educations.map((education, index) => (
+              <View key={index}>
+                <SectionHeaderPdf {...education} skipMargin/>
+                <View>
+                  {education.additionalInfo?.split("\n")?.map((point) => (
+                    <Text key={point}>
+                      {point.trim()}
+                    </Text>
+                  ))}
+                </View>
+              </View>
+            ))}
+          </View>
         </View>
-      </View>
-    </Page>
-  </Document>
-)
+        <View>
+          <Text style={{fontWeight: "bold", textAlign: "center"}}>
+            Skills & Interests
+          </Text>
+          <View>
+            {[
+              ...data.skills,
+              {name: "Languages", skills: data.introduction.languages},
+              {
+                name: "Interests",
+                skills: data.introduction.interests
+              }
+            ].map((category) => (
+              <Text key={category.name}>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                  }}
+                  wrap={false}
+                >
+                  {category.name}:&nbsp;
+                </Text>
+                <Text>
+                  {category.skills.map(it => `${it.name}${it.level ? ` [${it.level}]` : ""}`).join(", ")}
+                </Text>
+              </Text>
+            ))}
+          </View>
+        </View>
+      </Page>
+    </Document>
+  )
+}
