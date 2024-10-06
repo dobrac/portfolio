@@ -62,10 +62,10 @@ const experiences: Experience[] = [
     dateFrom: new Date(2019, 6),
     location: "Prague, Czech Republic",
     points: [
-      "Designing UI/UX, architecting, and implementing a new product from the ground up as part of a 5-person team.",
-      "Frequently taking the lead in designing new features, making key technical decisions, and solving complex technical challenges.",
-      "Demonstrated strong communication skills by collaborating effectively with team members and providing support to ensure task completion.",
-      "Currently leveraging TypeScript with Next.js and Node.js for full stack development; previously developed both frontend and backend using Kotlin."
+      "Architecting and implementing core parts of a new product from the ground up.",
+      "Taking the lead in designing new features, making key technical decisions, and solving complex technical challenges.",
+      "Demonstrating strong communication skills by collaborating effectively with team members and providing support to ensure task completion.",
+      "Currently leveraging TypeScript with Next.js and Node.js for full stack development; previously developed both frontend and backend using Kotlin.",
     ]
   },
   {
@@ -131,55 +131,68 @@ const skills: SkillCategory[] = [
     skills: [
       {
         name: "Typescript",
-        description: "Frontend and backend of websites"
+        description: "Frontend and backend of websites",
+        level: "Advanced"
       },
       {
         name: "Javascript",
-        description: "Frontend and backend of websites"
+        description: "Frontend and backend of websites",
+        level: "Advanced"
       },
       {
         name: "Kotlin",
-        description: "Frontend, backend, infrastructure, Minecraft plugins"
+        description: "Frontend, backend, infrastructure, Minecraft plugins",
+        level: "Advanced"
       },
       {
         name: "Java",
-        description: "Backend, infrastructure, Minecraft plugins"
+        description: "Backend, infrastructure, Minecraft plugins",
+        level: "Advanced"
       },
       {
         name: "HTML",
-        description: "Websites"
+        description: "Websites",
+        level: "Advanced"
       },
       {
         name: "CSS/SCSS",
-        description: "Websites"
+        description: "Websites",
+        level: "Advanced"
       },
       {
         name: "C/C++",
-        description: "Many projects at school"
+        description: "Many projects at school",
+        level: "Intermediate"
       },
       {
         name: "Bash",
-        description: "Scripts for managing bare metal servers"
+        description: "Scripts for managing bare metal servers",
+        level: "Intermediate"
       },
       {
         name: "C#",
-        description: "Backend for payment system"
+        description: "Backend for payment system",
+        level: "Intermediate"
       },
       {
         name: "Go",
-        description: "High performance server"
+        description: "High performance server",
+        level: "Beginner"
       },
       {
         name: "Ruby",
-        description: "School project and semester of basics"
+        description: "School project and semester of basics",
+        level: "Beginner"
       },
       {
         name: "Python",
-        description: "School projects, data analysis, ML"
+        description: "School projects, data analysis, ML",
+        level: "Intermediate"
       },
       {
         name: "Swift",
-        description: "Mobile application developed at school"
+        description: "Mobile application developed at school",
+        level: "Beginner"
       }
     ]
   },
@@ -223,6 +236,10 @@ const skills: SkillCategory[] = [
   {
     name: "Infrastructure and others",
     skills: [
+      {
+        name: "LLMs",
+        description: "Usage in JetBrains project"
+      },
       {
         name: "SQL",
         description: "Databases, MySQL, PostgreSQL, MSSQL"
