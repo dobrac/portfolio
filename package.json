@@ -26,7 +26,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "file-saver": "^2.0.5",
-    "html2pdf.js": "^0.9.3",
+    "html2pdf.js": "^0.10.0",
     "lucide-react": "^0.447.0",
     "next": "14.2.14",
     "next-themes": "^0.3.0",
