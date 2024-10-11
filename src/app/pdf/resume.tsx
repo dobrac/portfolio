@@ -20,8 +20,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'stretch',
     fontSize: 11,
-    padding: 24,
-    gap: 16,
+    paddingVertical: 24,
+    paddingHorizontal: 38,
+    gap: 10,
   },
 });
 
@@ -36,7 +37,7 @@ function SectionHeaderPdf(header: WithHeader & { skipMargin?: boolean }) {
       display: "flex",
       flexDirection: 'row',
       justifyContent: 'space-between',
-      marginBottom: skipMargin ? 0 : 10
+      marginBottom: skipMargin ? 0 : 4
     }}>
       <View>
         <Text style={{fontWeight: "bold"}}>
@@ -74,8 +75,8 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
           flexDirection: 'column',
           alignItems: 'center',
           alignSelf: 'center',
-          gap: 8,
-          width: '85%'
+          gap: 6,
+          width: '90%'
         }}>
           <Text style={{fontWeight: "bold"}}>
             {data.introduction.name}
@@ -88,19 +89,29 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
           </Text>
         </View>
         <View>
+          <Text style={{textAlign: "justify"}}>
+            Software and web developer with 9 years of experience. Quickly learning new technologies and new ways to
+            achieve goals.
+            Problem-solving, passion for detail, and critical thinking. Solid decision-making under pressure.
+            Able to speak and write in English, both technical and non-technical terms.
+            Able to communicate and work in a team or lead it. Focused on self-improvement, structured and organized
+            work.
+          </Text>
+        </View>
+        <View>
           <Text style={{fontWeight: "bold", textAlign: "center"}}>
             Experience
           </Text>
           <View style={{
             flexDirection: 'column',
-            gap: 8,
+            gap: 6,
           }}>
             {data.experiences.map((experience) => (
               <View key={experience.title}>
                 <SectionHeaderPdf {...experience}/>
-                <View style={{marginLeft: 12}}>
+                <View style={{marginLeft: 10}}>
                   {experience.points.map((point) => (
-                    <View key={point} style={{flexDirection: 'row', gap: 2}}>
+                    <View key={point} style={{flexDirection: 'row', gap: 2, textAlign: "justify"}}>
                       <Text style={{
                         fontSize: 14,
                       }}>
@@ -116,42 +127,13 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
             ))}
           </View>
         </View>
-        {/*<View>
-        <Text style={{fontWeight: "bold", textAlign: "center"}}>
-          Leadership & Activities
-        </Text>
-        <View style={{
-          flexDirection: 'column',
-          gap: 8,
-        }}>
-          {data.experiences.slice(1, 2).map((experience) => (
-            <View key={experience.title}>
-              <SectionHeaderPdf {...experience}/>
-              <View style={{marginLeft: 12}}>
-                {experience.points.map((point) => (
-                  <View key={point} style={{flexDirection: 'row', gap: 2}}>
-                    <Text style={{
-                      fontSize: 14,
-                    }}>
-                      •
-                    </Text>
-                    <Text>
-                      {point}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-            </View>
-          ))}
-        </View>
-      </View>*/}
         <View>
           <Text style={{fontWeight: "bold", textAlign: "center"}}>
             Education
           </Text>
           <View style={{
             flexDirection: 'column',
-            gap: 8,
+            gap: 6,
           }}>
             {data.educations.map((education, index) => (
               <View key={index}>
@@ -175,10 +157,10 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
             {[
               ...data.skills,
               {name: "Languages", skills: data.introduction.languages},
-              {
-                name: "Interests",
-                skills: data.introduction.interests
-              }
+              // {
+              //   name: "Interests",
+              //   skills: data.introduction.interests
+              // }
             ].map((category) => (
               <Text key={category.name}>
                 <Text

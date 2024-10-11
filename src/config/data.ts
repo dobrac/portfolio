@@ -62,10 +62,10 @@ const experiences: Experience[] = [
     dateFrom: new Date(2019, 6),
     location: "Prague, Czech Republic",
     points: [
-      "Architecting and implementing core parts of a new product from the ground up.",
-      "Taking the lead in designing new features, making key technical decisions, and solving complex technical challenges.",
-      "Collaborating effectively with team members and providing support to ensure task completion.",
-      "Currently leveraging TypeScript with Next.js and Node.js for full stack development; previously developed both frontend and backend using Kotlin.",
+      "Architected and implemented core components of a new product (not released yet) from the ground up, delivering critical features that enhance user experience.",
+      "Took ownership of technical decision-making and design for new features, successfully solving complex technical challenges that improved system performance.",
+      // "Collaborating effectively with team members and providing support to ensure task completion.",
+      "Leveraging TypeScript with Next.js and Node.js, but also LLMs to achieve the best user experience.",
     ]
   },
   {
@@ -73,12 +73,14 @@ const experiences: Experience[] = [
     title: "QPlay.cz",
     dateFrom: new Date(2014, 11),
     dateTo: new Date(2024, 2),
-    location: "Fully Remote",
+    location: "Remote",
     points: [
       "Led a team of 50 people and was the lead developer of 5 people.",
-      "Designed and implemented distributed dynamic servers load balancing, internal ticket system, user customer portal, automatic deployment, performance, scalability, monitoring, managed own Kubernetes cluster, and more.",
-      "Used various technologies and languages, but mainly the Java language.",
-      "Successfully handled 2+ mil. users, 10K per day, 2500 concurrently."
+      "Created distributed load balancing and own Kubernetes cluster, improving system stability and reliability.",
+      "Developed an internal ticketing system and customer portal, streamlining operations and processing over 100/day tickets.",
+      "Managed a high-traffic server infrastructure, ensuring smooth operation and a positive experience for thousands of users daily.",
+      "Used Java to achieve stability and robustness and many other technologies and languages.",
+      "Handled 2+ mil. users, 10K per day, 2500 concurrently."
     ]
   },
   {
@@ -86,10 +88,10 @@ const experiences: Experience[] = [
     title: "net-inout s.r.o.",
     dateFrom: new Date(2018, 4),
     dateTo: new Date(2021, 11),
-    location: "Fully Remote",
+    location: "Remote",
     points: [
-      "Co-created the architecture and developed a frontend part for a system for managing attendance.",
-      "My main focus was on the usability and completeness of the features."
+      "Co-created the architecture and developed a frontend part for a system for managing attendance, emphasizing usability and feature completeness.",
+      "Designed the UX and UI for the system, achieving an intuitive interface.",
     ]
   },
   {
@@ -97,11 +99,10 @@ const experiences: Experience[] = [
     title: "Survival-Games.cz",
     dateFrom: new Date(2013, 0),
     dateTo: new Date(2014, 10),
-    location: "Fully Remote",
+    location: "Remote",
     points: [
-      "Built and managed the server from the beginning. Initially only using existing solutions (plugins).",
-      "Achieved 500 concurrent players. Thousands of users per day.",
-      "Later on, this was my first motivation for learning programming, so I learned Java."
+      "Created and managed a game server infrastructure from scratch, initially leveraging existing plugins to meet user needs and ensure system functionality.",
+      "Scaled the server to handle 500 concurrent players and supported thousands of daily users, maintaining a high level of performance and stability.",
     ]
   }
 ]
@@ -109,12 +110,11 @@ const experiences: Experience[] = [
 const educations: Education[] = [
   {
     name: "Master's degree, Web Engineering",
-    title: "Faculty of Information Technology, CTU",
+    title: "Czech Technical University in Prague",
     dateFrom: new Date(2021, 8),
     dateTo: new Date(2024, 6),
     location: "Prague, Czech Republic",
-    additionalInfo: `Grade: GPA ~3.8
-    Graduated, Master thesis title: 'Interactive web documentation for Protocol Buffers'`
+    additionalInfo: `Grade: GPA ~3.8, Graduated, Thesis title: 'Interactive web documentation for Protocol Buffers'`
   },
   {
     name: "Study Abroad Program",
@@ -303,7 +303,7 @@ const skills: SkillCategory[] = [
     ],
   },
   {
-    name: "Soft",
+    name: "Soft Skills",
     skills: [
       {
         name: "Team Management",
