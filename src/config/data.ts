@@ -65,7 +65,7 @@ const experiences: Experience[] = [
       "Architected and implemented core components of a new product (not released yet) from the ground up, delivering critical features that enhance user experience.",
       "Took ownership of technical decision-making and design for new features, successfully solving complex technical challenges that improved system performance.",
       // "Collaborating effectively with team members and providing support to ensure task completion.",
-      "Leveraging TypeScript with Next.js and Node.js, but also LLMs to achieve the best user experience.",
+      "Leveraging TypeScript with Next.js and Node.js, as well as LLMs, to achieve the best user experience.",
     ]
   },
   {
