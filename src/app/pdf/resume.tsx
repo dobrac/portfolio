@@ -110,7 +110,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
               <View key={experience.title}>
                 <SectionHeaderPdf {...experience}/>
                 <View style={{marginLeft: 10}}>
-                  {experience.points.map((point) => (
+                  {!experience.hidePoints && experience.points.map((point) => (
                     <View key={point} style={{flexDirection: 'row', gap: 2, textAlign: "justify"}}>
                       <Text style={{
                         fontSize: 14,

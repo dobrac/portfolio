@@ -20,7 +20,7 @@ export function IntroductionPart() {
           </TypographySmall>
 
           <div className="mt-5 flex gap-5">
-            <a href="/files/cv.pdf" target="_blank">
+            <a href="/resume" target="_blank">
               <Image
                 src="/images/cv.svg"
                 alt="CV icon"

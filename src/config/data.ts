@@ -16,6 +16,7 @@ export interface WithHeader {
 
 export interface Experience extends WithHeader {
   points: string[]
+  hidePoints?: boolean
 }
 
 export interface Education extends WithHeader {
@@ -103,7 +104,8 @@ const experiences: Experience[] = [
     points: [
       "Created and managed a game server infrastructure from scratch, initially leveraging existing plugins to meet user needs and ensure system functionality.",
       "Scaled the server to handle 500 concurrent players and supported thousands of daily users, maintaining a high level of performance and stability.",
-    ]
+    ],
+    hidePoints: true
   }
 ]
 
