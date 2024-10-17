@@ -116,7 +116,7 @@ const educations: Education[] = [
     dateFrom: new Date(2021, 8),
     dateTo: new Date(2024, 6),
     location: "Prague, Czech Republic",
-    additionalInfo: `GPA: 1.15/1.0 (CZE) | GPA 3.8/4.0 (USA), Thesis title: 'Interactive web documentation for Protocol Buffers'`
+    additionalInfo: `GPA: 1.15/1.0 (CZE) | 3.8/4.0 (USA), Thesis title: 'Interactive web documentation for Protocol Buffers'`
   },
   {
     name: "Study Abroad Program",
