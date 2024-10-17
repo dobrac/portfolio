@@ -12,6 +12,9 @@ Font.register({
   }
 );
 
+// Disable hyphenation
+Font.registerHyphenationCallback(word => [word]);
+
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -47,7 +50,7 @@ function SectionHeaderPdf(header: WithHeader & { skipMargin?: boolean }) {
           {header.name}
         </Text>
       </View>
-      <View style={{display: "flex", flexDirection: "column", alignItems: "flex-end"}}>
+      <View style={{display: "flex", flexDirection: "column", alignItems: "flex-end",}}>
         <Text>
           {header.location}
         </Text>
@@ -111,9 +114,9 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
                 <SectionHeaderPdf {...experience}/>
                 <View style={{marginLeft: 10}}>
                   {!experience.hidePoints && experience.points.map((point) => (
-                    <View key={point} style={{flexDirection: 'row', gap: 2, textAlign: "justify"}}>
+                    <View key={point} style={{flexDirection: 'row', gap: 4, textAlign: "justify"}}>
                       <Text style={{
-                        fontSize: 14,
+                        fontSize: 10
                       }}>
                         •
                       </Text>

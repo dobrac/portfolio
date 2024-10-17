@@ -36,17 +36,16 @@ export function AwardsPart() {
 
       <div className="flex flex-col gap-5 mt-5">
         <AwardSection
+          title="Athlete of the Year"
+          school="Czech Technical University in Prague"
+          dateFrom={new Date(2019, 0)}
+          additionalInfo="Fourth place in the absolute ranking."
+        />
+        <AwardSection
           title="Mathematical Olympiad Cat. A"
           school="Gymnazium, Plzen, Mikulasske nam. 23"
           dateFrom={new Date(2017, 0)}
           dateTo={new Date(2018, 0)}
-          additionalInfo="Successful solver of the regional round."
-        />
-        <AwardSection
-          title="Physics Olympiad Cat. D"
-          school="Gymnazium, Plzen, Mikulasske nam. 23"
-          dateFrom={new Date(2014, 0)}
-          dateTo={new Date(2015, 0)}
           additionalInfo="Successful solver of the regional round."
         />
         <AwardSection
@@ -56,10 +55,11 @@ export function AwardsPart() {
           additionalInfo="Excellent school results and sports results."
         />
         <AwardSection
-          title="Athlete of the Year"
-          school="Czech Technical University in Prague"
-          dateFrom={new Date(2019, 0)}
-          additionalInfo="Fourth place in the absolute ranking."
+          title="Physics Olympiad Cat. D"
+          school="Gymnazium, Plzen, Mikulasske nam. 23"
+          dateFrom={new Date(2014, 0)}
+          dateTo={new Date(2015, 0)}
+          additionalInfo="Successful solver of the regional round."
         />
       </div>
     </Section>

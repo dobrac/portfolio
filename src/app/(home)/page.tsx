@@ -13,8 +13,8 @@ export default function Home() {
       className="grid min-h-screen">
       <main className="flex flex-col items-start">
         <IntroductionPart/>
-        <SkillsPart/>
         <ProjectsPart/>
+        <SkillsPart/>
         <ExperiencePart/>
         <AwardsPart/>
         <EducationPart/>

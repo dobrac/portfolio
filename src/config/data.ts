@@ -59,7 +59,7 @@ const introduction: Introduction = {
 const experiences: Experience[] = [
   {
     name: "Software Developer",
-    title: "JetBrains s.r.o.",
+    title: "JetBrains",
     dateFrom: new Date(2019, 6),
     location: "Prague, Czech Republic",
     points: [
@@ -111,12 +111,12 @@ const experiences: Experience[] = [
 
 const educations: Education[] = [
   {
-    name: "Master's degree, Web Engineering",
+    name: "Master's degree, Computer Science",
     title: "Czech Technical University in Prague",
     dateFrom: new Date(2021, 8),
     dateTo: new Date(2024, 6),
     location: "Prague, Czech Republic",
-    additionalInfo: `Grade: GPA ~3.8, Graduated, Thesis title: 'Interactive web documentation for Protocol Buffers'`
+    additionalInfo: `GPA: 1.15/1.0 (CZE) | GPA 3.8/4.0 (USA), Thesis title: 'Interactive web documentation for Protocol Buffers'`
   },
   {
     name: "Study Abroad Program",
