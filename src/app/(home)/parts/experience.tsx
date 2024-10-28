@@ -3,7 +3,7 @@ import {Section} from "./section";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {data, Experience} from "../../../config/data";
 
-function ExperienceSection({name, title, dateFrom, dateTo, location, points}: Readonly<Experience>) {
+function ExperienceSection({name, title, dateFrom, dateTo, location, pointsLong}: Readonly<Experience>) {
   const dateFromFormatted = dateFrom.toLocaleDateString('en-US', {month: 'short', year: 'numeric'});
   const dateToFormatted = dateTo?.toLocaleDateString('en-US', {month: 'short', year: 'numeric'}) ?? 'Present';
 
@@ -23,7 +23,7 @@ function ExperienceSection({name, title, dateFrom, dateTo, location, points}: Re
       </CardHeader>
       <CardContent>
         <ul className="list-disc">
-          {points.map((point, index) => <li key={index} className="my-3">{point}</li>)}
+          {pointsLong.map((point, index) => <li key={index} className="my-3">{point}</li>)}
         </ul>
       </CardContent>
     </Card>

@@ -6,20 +6,31 @@ export interface Introduction {
   interests: Skill[]
 }
 
-export interface WithHeader {
+export interface WithFullHeader {
   name: string;
   title: string;
-  location: string;
+  location?: string;
   dateFrom: Date,
   dateTo?: Date,
 }
 
-export interface Experience extends WithHeader {
-  points: string[]
-  hidePoints?: boolean
+export interface WithLiteHeader {
+  title: string;
+  name?: string;
 }
 
-export interface Education extends WithHeader {
+export type WithHeader = WithFullHeader | WithLiteHeader
+
+export interface Experience extends WithFullHeader {
+  pointsLong: string[]
+  pointsShort?: string[]
+}
+
+export interface Education extends WithFullHeader {
+  additionalInfo?: string
+}
+
+export interface Award extends WithFullHeader {
   additionalInfo?: string
 }
 
@@ -34,6 +45,12 @@ export interface Skill {
   description?: string
 }
 
+export enum TechSkillLevel {
+  Beginner = "Beginner",
+  Intermediate = "Intermediate",
+  Advanced = "Advanced"
+}
+
 const introduction: Introduction = {
   name: "Jakub Dobry",
   position: "Software Engineer",
@@ -45,7 +62,7 @@ const introduction: Introduction = {
     },
     {
       name: "English",
-      level: "Professional"
+      level: "B2-C1"
     }
   ],
   interests: [
@@ -62,11 +79,14 @@ const experiences: Experience[] = [
     title: "JetBrains",
     dateFrom: new Date(2019, 6),
     location: "Prague, Czech Republic",
-    points: [
-      "Architected and implemented core components of a new product (not released yet) from the ground up, delivering critical features that enhance user experience.",
+    pointsLong: [
+      "Architected and implemented core components of a new product from the ground up, delivering critical features that enhance user experience.",
       "Took ownership of technical decision-making and design for new features, successfully solving complex technical challenges that improved system performance.",
-      // "Collaborating effectively with team members and providing support to ensure task completion.",
       "Leveraging TypeScript with Next.js and Node.js, as well as LLMs, to achieve the best user experience.",
+    ],
+    pointsShort: [
+      "Working on a new product from the ground up, delivering critical features that enhance user experience.",
+      "Taking ownership of technical decision-making and design for new features, successfully solving complex technical challenges.",
     ]
   },
   {
@@ -75,12 +95,16 @@ const experiences: Experience[] = [
     dateFrom: new Date(2014, 11),
     dateTo: new Date(2024, 2),
     location: "Remote",
-    points: [
+    pointsLong: [
       "Led a team of 50 people and was the lead developer of 5 people.",
       "Created distributed load balancing and own Kubernetes cluster, improving system stability and reliability.",
       "Developed an internal ticketing system and customer portal, streamlining operations and processing over 100/day tickets.",
       "Managed a high-traffic server infrastructure, ensuring smooth operation and a positive experience for thousands of users daily.",
       "Used Java to achieve stability and robustness and many other technologies and languages.",
+      "Handled 2+ mil. users, 10K per day, 2500 concurrently."
+    ],
+    pointsShort: [
+      "Led a team of 50 people and was the lead developer of 5 people.",
       "Handled 2+ mil. users, 10K per day, 2500 concurrently."
     ]
   },
@@ -90,10 +114,10 @@ const experiences: Experience[] = [
     dateFrom: new Date(2018, 4),
     dateTo: new Date(2021, 11),
     location: "Remote",
-    points: [
+    pointsLong: [
       "Co-created the architecture and developed a frontend part for a system for managing attendance, emphasizing usability and feature completeness.",
       "Designed the UX and UI for the system, achieving an intuitive interface.",
-    ]
+    ],
   },
   {
     name: "Maintainer, Developer",
@@ -101,11 +125,10 @@ const experiences: Experience[] = [
     dateFrom: new Date(2013, 0),
     dateTo: new Date(2014, 10),
     location: "Remote",
-    points: [
+    pointsLong: [
       "Created and managed a game server infrastructure from scratch, initially leveraging existing plugins to meet user needs and ensure system functionality.",
       "Scaled the server to handle 500 concurrent players and supported thousands of daily users, maintaining a high level of performance and stability.",
     ],
-    hidePoints: true
   }
 ]
 
@@ -116,7 +139,7 @@ const educations: Education[] = [
     dateFrom: new Date(2021, 8),
     dateTo: new Date(2024, 6),
     location: "Prague, Czech Republic",
-    additionalInfo: `GPA: 1.15/1.0 (CZE) | 3.8/4.0 (USA), Thesis title: 'Interactive web documentation for Protocol Buffers'`
+    additionalInfo: `GPA: 1.15/1.0 (CZE) | 3.8/4.0, Thesis: 'Interactive web documentation for Protocol Buffers'`
   },
   {
     name: "Study Abroad Program",
@@ -134,67 +157,67 @@ const skills: SkillCategory[] = [
       {
         name: "Typescript",
         description: "Frontend and backend of websites",
-        level: "Advanced"
+        level: TechSkillLevel.Advanced
       },
       {
         name: "Javascript",
         description: "Frontend and backend of websites",
-        level: "Advanced"
+        level: TechSkillLevel.Advanced
       },
       {
         name: "Kotlin",
         description: "Frontend, backend, infrastructure, Minecraft plugins",
-        level: "Advanced"
+        level: TechSkillLevel.Advanced
       },
       {
         name: "Java",
         description: "Backend, infrastructure, Minecraft plugins",
-        level: "Advanced"
+        level: TechSkillLevel.Advanced
       },
       {
         name: "HTML",
         description: "Websites",
-        level: "Advanced"
+        level: TechSkillLevel.Advanced
       },
       {
         name: "CSS/SCSS",
         description: "Websites",
-        level: "Advanced"
+        level: TechSkillLevel.Advanced
       },
       {
         name: "C/C++",
         description: "Many projects at school",
-        level: "Intermediate"
+        level: TechSkillLevel.Intermediate
       },
       {
         name: "Bash",
         description: "Scripts for managing bare metal servers",
-        level: "Intermediate"
+        level: TechSkillLevel.Intermediate
       },
       {
         name: "C#",
         description: "Backend for payment system",
-        level: "Intermediate"
-      },
-      {
-        name: "Go",
-        description: "High performance server",
-        level: "Beginner"
-      },
-      {
-        name: "Ruby",
-        description: "School project and semester of basics",
-        level: "Beginner"
+        level: TechSkillLevel.Intermediate
       },
       {
         name: "Python",
         description: "School projects, data analysis, ML",
-        level: "Intermediate"
+        level: TechSkillLevel.Intermediate
+      },
+      {
+        name: "Go",
+        description: "High performance server",
+        level: TechSkillLevel.Beginner
+      },
+      {
+        name: "Ruby",
+        description: "School project and semester of basics",
+        level: TechSkillLevel.Beginner
       },
       {
         name: "Swift",
         description: "Mobile application developed at school",
-        level: "Beginner"
+        level: TechSkillLevel.Beginner
       }
     ]
   },
@@ -298,10 +321,10 @@ const skills: SkillCategory[] = [
         name: "Optimization",
         description: "Minecraft server QPlay.cz"
       },
-      {
-        name: "Advanced Algorithms",
-        description: "School projects"
-      }
+      // {
+      //   name: "Advanced Algorithms",
+      //   description: "School projects"
+      // }
     ],
   },
   {
@@ -327,9 +350,39 @@ const skills: SkillCategory[] = [
   }
 ]
 
+const awards: Award[] = [
+  {
+    title: "Athlete of the Year",
+    name: "Czech Technical University in Prague",
+    dateFrom: new Date(2019, 0),
+    additionalInfo: "Fourth place in the absolute ranking."
+  },
+  {
+    title: "Mathematical Olympiad Cat. A",
+    name: "Gymnazium, Plzen, Mikulasske nam. 23",
+    dateFrom: new Date(2017, 0),
+    dateTo: new Date(2018, 0),
+    additionalInfo: "Successful solver of the regional round."
+  },
+  {
+    title: "Rector's Award",
+    name: "University of West Bohemia",
+    dateFrom: new Date(2017, 0),
+    additionalInfo: "Excellent school results and sports results."
+  },
+  {
+    title: "Physics Olympiad Cat. D",
+    name: "Gymnazium, Plzen, Mikulasske nam. 23",
+    dateFrom: new Date(2014, 0),
+    dateTo: new Date(2015, 0),
+    additionalInfo: "Successful solver of the regional round."
+  }
+]
+
 export const data = {
   introduction,
   experiences,
   educations,
-  skills
+  skills,
+  awards
 }

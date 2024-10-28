@@ -75,7 +75,7 @@ export default function Resume() {
               <div key={experience.title}>
                 <SectionHeader {...experience}/>
                 <div className="ml-6">
-                  {experience.points.map((point) => (
+                  {experience.pointsLong.map((point) => (
                     <div key={point} className="flex gap-2 align-baseline">
                       <div className="align-middle" style={{fontSize: "24px"}}>
                         •
