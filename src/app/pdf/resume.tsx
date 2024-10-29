@@ -249,7 +249,12 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
             justifyContent: 'space-between',
             gap: SPACING,
           }}>
-            <Text>{email ?? "---"}</Text>
+            <Text>
+              <Link href={`mailto:${email}`}
+                    style={{textDecoration: "none"}}>
+                {email ?? "---"}
+              </Link>
+            </Text>
             <Text>•</Text>
             <Text>{numberFormatted ?? "---"}</Text>
             <Text>•</Text>
@@ -257,7 +262,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
             <Text>•</Text>
             <Text>
               <Link src="https://www.linkedin.com/in/jakub-dobry/"
-                    style={{color: "inherit", textDecoration: "none"}}>
+                    style={{textDecoration: "none"}}>
                 linkedin.com/in/jakub-dobry
               </Link>
             </Text>
