@@ -75,7 +75,7 @@ const introduction: Introduction = {
 
 const experiences: Experience[] = [
   {
-    name: "Software Developer",
+    name: "Software Engineer",
     title: "JetBrains",
     dateFrom: new Date(2019, 6),
     location: "Prague, Czech Republic",
