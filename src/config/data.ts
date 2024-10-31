@@ -90,7 +90,7 @@ const experiences: Experience[] = [
     ]
   },
   {
-    name: "Lead Software Engineer",
+    name: "Lead Software Engineer & Founder",
     title: "QPlay.cz",
     dateFrom: new Date(2014, 11),
     dateTo: new Date(2024, 2),
