@@ -296,7 +296,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
                     name="JetBrains"
                   />
                   <View style={{marginLeft: UNIT / 2}}>
-                    <Point>Building new product from the beginning, including frontend, backend, project setup,
+                    <Point>Building a new product from the beginning, including frontend, backend, project setup,
                       infrastructure.</Point>
                     <Point>Taking initiative in important technical decisions.</Point>
                     <Point>
@@ -317,7 +317,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
                       Created tools to manage distributed Minecraft server across 10+ virtual machines.
                     </Point>
                     <Point>
-                      Examples of functionality: distributing server images, logs collection, servers management,
+                      Examples of functionality: distributing server images, logs collection, server management,
                       monitoring, and management portal.
                     </Point>
                     <Point>
@@ -360,7 +360,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
                   />
                   <View style={{marginLeft: UNIT / 2}}>
                     <Point>
-                      Created front end part of the ESTIMAS software, including features like time tracking, attendance
+                      Created front end part of the ESTIMAS software, including features like time tracking, attendance,
                       and user management.
                     </Point>
                     <Point>
