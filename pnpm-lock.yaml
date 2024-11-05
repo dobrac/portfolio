@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@react-pdf/layout':
+    hash: msvmaay3mdgqli63dukrxhrbi4
+    path: patches/@react-pdf__layout.patch
+
 importers:
 
   .:
@@ -3856,7 +3861,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@react-pdf/layout@4.0.0':
+  '@react-pdf/layout@4.0.0(patch_hash=msvmaay3mdgqli63dukrxhrbi4)':
     dependencies:
       '@babel/runtime': 7.25.7
       '@react-pdf/fns': 3.0.0
@@ -3906,7 +3911,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.25.7
       '@react-pdf/font': 3.0.0
-      '@react-pdf/layout': 4.0.0
+      '@react-pdf/layout': 4.0.0(patch_hash=msvmaay3mdgqli63dukrxhrbi4)
       '@react-pdf/pdfkit': 4.0.0
       '@react-pdf/primitives': 4.0.0
       '@react-pdf/render': 4.0.0

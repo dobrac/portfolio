@@ -50,5 +50,10 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@9.12.2"
+  "packageManager": "pnpm@9.12.2",
+  "pnpm": {
+    "patchedDependencies": {
+      "@react-pdf/layout": "patches/@react-pdf__layout.patch"
+    }
+  }
 }

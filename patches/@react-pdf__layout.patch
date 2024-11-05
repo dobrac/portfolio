@@ -1,0 +1,25 @@
+diff --git a/lib/index.js b/lib/index.js
+index e8a27ee1610f8388516a71a59a3b6150a0a7765f..a15a53cfdbf3f23ee9679aed317b979fdc3296d5 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -601,13 +601,13 @@ const resolveSvg = (node, fontStore) => {
+ 
+ /* eslint-disable import/prefer-default-export */
+ 
+-let instance;
+-const loadYoga = async () => {
+-  if (!instance) {
+-    // Yoga WASM binaries must be asynchronously compiled and loaded
+-    // to prevent Event emitter memory leak warnings, Yoga must be loaded only once
+-    instance = await loadYoga$1();
+-  }
++let instancePromise;
++
++export const loadYoga = async () => {
++  // Yoga WASM binaries must be asynchronously compiled and loaded
++  // to prevent Event emitter memory leak warnings, Yoga must be loaded only once
++  const instance = await (instancePromise ??= loadYoga$1()); // renamed as this is the imported name at the top of the file
++
+   const config = instance.Config.create();
+   config.setPointScaleFactor(0);
+   const node = {
