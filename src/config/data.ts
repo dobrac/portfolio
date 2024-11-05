@@ -11,7 +11,7 @@ export interface WithFullHeader {
   title: string;
   location?: string;
   dateFrom: Date,
-  dateTo?: Date,
+  dateTo?: Date | null,
 }
 
 export interface WithLiteHeader {
@@ -355,6 +355,7 @@ const awards: Award[] = [
     title: "Athlete of the Year",
     name: "Czech Technical University in Prague",
     dateFrom: new Date(2019, 0),
+    dateTo: null,
     additionalInfo: "Fourth place in the absolute ranking."
   },
   {
@@ -368,6 +369,7 @@ const awards: Award[] = [
     title: "Rector's Award",
     name: "University of West Bohemia",
     dateFrom: new Date(2017, 0),
+    dateTo: null,
     additionalInfo: "Excellent school results and sports results."
   },
   {

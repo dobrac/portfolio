@@ -66,9 +66,15 @@ const styles = StyleSheet.create({
   },
 });
 
-function ItemHeaderFullSmall(header: WithFullHeader & { skipMargin?: boolean }) {
-  const dateFromFormatted = header.dateFrom.toLocaleDateString('en-US', {month: 'short', year: 'numeric'});
-  const dateToFormatted = header.dateTo?.toLocaleDateString('en-US', {month: 'short', year: 'numeric'}) ?? 'Present';
+function ItemHeaderFullSmall(header: WithFullHeader & { skipMargin?: boolean, yearOnly?: boolean }) {
+  const dateFromFormatted = header.dateFrom.toLocaleDateString('en-US', {
+    month: header.yearOnly ? undefined : 'short',
+    year: 'numeric'
+  });
+  const dateToFormatted = header.dateTo?.toLocaleDateString('en-US', {
+    month: header.yearOnly ? undefined : 'short',
+    year: 'numeric'
+  }) ?? 'Present';
 
   const {skipMargin = false} = header;
 
@@ -91,9 +97,12 @@ function ItemHeaderFullSmall(header: WithFullHeader & { skipMargin?: boolean }) 
         <Text>
           {header.location}
         </Text>
-        <Text>
-          {dateFromFormatted} - {dateToFormatted}
-        </Text>
+        {header.dateTo === null ?
+          <Text>{dateFromFormatted}</Text> :
+          <Text>
+            {dateFromFormatted} - {dateToFormatted}
+          </Text>
+        }
       </View>
     </View>
   )
@@ -446,7 +455,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
               }}>
                 {data.awards.map((award, index) => (
                   <View key={index}>
-                    <ItemHeaderFullSmall {...award} />
+                    <ItemHeaderFullSmall {...award} yearOnly/>
                     <View style={{color: colors.body, ...fonts.small}}>
                       {award.additionalInfo?.split("\n")?.map((point) => (
                         <Text key={point}>
