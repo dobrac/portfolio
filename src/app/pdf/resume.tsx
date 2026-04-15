@@ -1,8 +1,8 @@
 import {Document, Font, Link, Page, StyleSheet, Text, View} from "@react-pdf/renderer";
 import {data, WithFullHeader, WithLiteHeader} from "../../config/data";
 
-const UNIT = 8.0
-const SPACING = 6.0
+const UNIT = 7.0
+const SPACING = 5.0
 const HEADER_MARGIN = UNIT / 3
 
 // Register font
@@ -248,7 +248,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
             <Text style={{
               ...fonts.header
             }}>
-              Software Engineer @ JetBrains
+              Software Engineer @ E2B
             </Text>
           </View>
           <View style={{width: "100%", height: 0.5, backgroundColor: "black"}}/>
@@ -279,7 +279,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
         </View>
         <View>
           <Text style={{textAlign: "justify"}}>
-            <Text style={{fontWeight: "bold"}}>Software Engineer with 9+ years of experience.</Text> Quickly learning
+            <Text style={{fontWeight: "bold"}}>Software Engineer with {data.yearsOfExperience}+ years of experience.</Text> Quickly learning
             new technologies and new approaches.
             Problem-solving, passion for detail, and critical thinking. Solid decision-making under pressure.
             Able to communicate and work in a team or lead it. Focused on self-improvement, structured and organized

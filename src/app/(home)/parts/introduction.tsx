@@ -16,7 +16,7 @@ export function IntroductionPart() {
             {data.introduction.position}
           </TypographyLead>
           <TypographySmall>
-            {data.introduction.city}, willing to relocate
+            {data.introduction.city}
           </TypographySmall>
 
           <div className="mt-5 flex gap-5">

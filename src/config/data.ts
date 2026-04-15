@@ -54,7 +54,7 @@ export enum TechSkillLevel {
 const introduction: Introduction = {
   name: "Jakub Dobry",
   position: "Software Engineer",
-  city: "Prague, Czech Republic",
+  city: "San Francisco, California",
   languages: [
     {
       name: "Czech",
@@ -62,7 +62,7 @@ const introduction: Introduction = {
     },
     {
       name: "English",
-      level: "B2-C1"
+      level: "Full Professional"
     }
   ],
   interests: [
@@ -76,8 +76,19 @@ const introduction: Introduction = {
 const experiences: Experience[] = [
   {
     name: "Software Engineer",
+    title: "E2B",
+    dateFrom: new Date(2025, 0),
+    dateTo: null,
+    location: "San Francisco, CA",
+    pointsLong: [
+      "Working on the best Sandboxes for AI Agents.",
+    ],
+  },
+  {
+    name: "Software Engineer",
     title: "JetBrains",
     dateFrom: new Date(2019, 6),
+    dateTo: new Date(2025, 0),
     location: "Prague, Czech Republic",
     pointsLong: [
       "Architected and implemented core components of a new product from the ground up, delivering critical features that enhance user experience.",
@@ -381,10 +392,14 @@ const awards: Award[] = [
   }
 ]
 
+const earliestExperience = experiences.reduce((min, exp) => exp.dateFrom < min ? exp.dateFrom : min, experiences[0].dateFrom);
+const yearsOfExperience = Math.floor((Date.now() - earliestExperience.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+
 export const data = {
   introduction,
   experiences,
   educations,
   skills,
-  awards
+  awards,
+  yearsOfExperience
 }
