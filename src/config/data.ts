@@ -392,10 +392,14 @@ const awards: Award[] = [
   }
 ]
 
+const earliestExperience = experiences.reduce((min, exp) => exp.dateFrom < min ? exp.dateFrom : min, experiences[0].dateFrom);
+const yearsOfExperience = Math.floor((Date.now() - earliestExperience.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+
 export const data = {
   introduction,
   experiences,
   educations,
   skills,
-  awards
+  awards,
+  yearsOfExperience
 }

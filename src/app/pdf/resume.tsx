@@ -219,8 +219,6 @@ interface ResumeDocumentProps {
 
 export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
   const numberFormatted = phone?.replace(/\D/g, '')?.replace(/^420(\d{3})(\d{3})(\d{3})$/, '+420 $1 $2 $3');
-  const earliestExperience = data.experiences.reduce((min, exp) => exp.dateFrom < min ? exp.dateFrom : min, data.experiences[0].dateFrom);
-  const yearsOfExperience = Math.floor((Date.now() - earliestExperience.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
 
   return (
     <Document title="Jakub Dobry - Resume">
@@ -281,7 +279,7 @@ export const ResumeDocument = ({email, phone}: ResumeDocumentProps) => {
         </View>
         <View>
           <Text style={{textAlign: "justify"}}>
-            <Text style={{fontWeight: "bold"}}>Software Engineer with {yearsOfExperience}+ years of experience.</Text> Quickly learning
+            <Text style={{fontWeight: "bold"}}>Software Engineer with {data.yearsOfExperience}+ years of experience.</Text> Quickly learning
             new technologies and new approaches.
             Problem-solving, passion for detail, and critical thinking. Solid decision-making under pressure.
             Able to communicate and work in a team or lead it. Focused on self-improvement, structured and organized
