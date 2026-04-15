@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import {baseUrl} from "./sitemap";
 import {SpeedInsights} from "@vercel/speed-insights/next"
+import {Analytics} from "@vercel/analytics/next"
 import {Toaster} from "../components/ui/sonner";
 import {ThemeProvider} from "../components/theme-provider";
 
@@ -73,6 +74,7 @@ export default function RootLayout({
       <Toaster/>
     </ThemeProvider>
     <SpeedInsights/>
+    <Analytics/>
     </body>
     </html>
   );
